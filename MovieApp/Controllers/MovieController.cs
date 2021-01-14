@@ -10,9 +10,14 @@ using RestSharp;
 using Serilog;
 using Microsoft.Extensions.Configuration;
 using System.Net;
+using MovieApp.Model;
 
 namespace MovieApp.Controllers
+
 {
+    /// <summary>
+    /// this is the movie Api controller to retrieve movies from api
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class MovieController : ControllerBase
@@ -28,7 +33,10 @@ namespace MovieApp.Controllers
 
         }
 
-
+        /// <summary>
+        /// this method retrieve all movies from api and return list of movies
+        /// </summary>
+        /// <returns>IEnumerable<Movie></returns>
         [HttpGet]
         public IEnumerable<Movie> GetMovies()
         {
@@ -55,6 +63,11 @@ namespace MovieApp.Controllers
             return _movies ;
 
         }
+        /// <summary>
+        /// This method get a movie by Id
+        /// </summary>
+        /// <param name="Id"></param> id of movie
+        /// <returns>movie</returns>
         [HttpGet("/movie/{id}")]
         public Movie GetMovieById(string Id)
         {

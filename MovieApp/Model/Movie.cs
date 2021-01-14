@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace MovieApp
 {
+    /// <summary>
+    /// this is a movie Class to map json response to movie object
+    /// </summary>
     public class Movie
     {
         public string Title { get; set; }
@@ -14,9 +17,6 @@ namespace MovieApp
         public string Poster { get; set; }
         
     }
-    public class MovieList
-    {
-        public IEnumerable<Movie> Movies { get; set; }
-    }
+   
 
 }
