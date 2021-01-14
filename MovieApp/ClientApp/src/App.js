@@ -9,7 +9,7 @@ export default class App extends Component {
     static displayName = App.name;
     constructor(props) {
         super(props);
-        this.state = { movies: [], loading: true };
+        this.state = { movies: [], loading: true, error:false };
     }
 
     componentDidMount() {
@@ -41,7 +41,9 @@ export default class App extends Component {
     render() {
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
-            : App.renderMovieContent(this.state.movies);
+            :(this.state.error
+                ? <p ><em>No result comes back from the API (check app settings)</em></p> : App.renderMovieContent(this.state.movies));
+      
     return (
     
         
@@ -61,7 +63,12 @@ export default class App extends Component {
 
     async populateAllMovies() {
         const response = await fetch('Movie');
-        const data = await response.json();
-        this.setState({ movies: data, loading: false });
+        if (response.statusText != "No Content") {
+            const data = await response.json();
+            this.setState({ movies: data, loading: false, error:false });
+        }
+        else {
+            this.setState({ error:true,loading: false  });
+        }
     }
    }

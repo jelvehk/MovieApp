@@ -42,6 +42,7 @@ namespace MovieApp.Controllers
         public IEnumerable<Movie> GetMovies()
         {
             var items = _service.GetAllMovies ();
+      
             return items;
 
         }
@@ -54,10 +55,6 @@ namespace MovieApp.Controllers
         public Movie GetMovieById(string id)
         {
             var item = _service.GetMovieById(id);
-            if (item == null)
-            {
-                return null;
-            }
             return item;
 
         }
