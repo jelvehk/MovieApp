@@ -1,0 +1,37 @@
+2021-01-14 17:35:50.627 +11:00 [ERR] Error happend trying to get response from API
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at MovieApp.Service.MovieService.GetAllMovies() in C:\Users\jelve\source\repos\MovieApp\MovieApp\Service\MovieService.cs:line 44
+2021-01-14 17:35:50.627 +11:00 [ERR] Error happend trying to get response from API
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at MovieApp.Service.MovieService.GetAllMovies() in C:\Users\jelve\source\repos\MovieApp\MovieApp\Service\MovieService.cs:line 44
+2021-01-14 17:35:50.627 +11:00 [ERR] Error happend trying to get response from API
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at MovieApp.Service.MovieService.GetAllMovies() in C:\Users\jelve\source\repos\MovieApp\MovieApp\Service\MovieService.cs:line 44
+2021-01-14 17:35:52.800 +11:00 [ERR] Error happend trying to get response from API
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at MovieApp.Service.MovieService.GetAllMovies() in C:\Users\jelve\source\repos\MovieApp\MovieApp\Service\MovieService.cs:line 44
+2021-01-14 17:40:17.390 +11:00 [ERR] Error happend trying to get response from API
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at MovieApp.Service.MovieService.GetAllMovies() in C:\Users\jelve\source\repos\MovieApp\MovieApp\Service\MovieService.cs:line 44
+2021-01-14 17:40:47.924 +11:00 [ERR] Error happend trying to get response from API
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at MovieApp.Service.MovieService.GetAllMovies() in C:\Users\jelve\source\repos\MovieApp\MovieApp\Service\MovieService.cs:line 44
+2021-01-14 17:40:49.219 +11:00 [ERR] Error happend trying to get response from API
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at MovieApp.Service.MovieService.GetAllMovies() in C:\Users\jelve\source\repos\MovieApp\MovieApp\Service\MovieService.cs:line 44
+2021-01-14 17:43:31.242 +11:00 [ERR] Error happend trying to get response from API
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at MovieApp.Service.MovieService.GetAllMovies() in C:\Users\jelve\source\repos\MovieApp\MovieApp\Service\MovieService.cs:line 44

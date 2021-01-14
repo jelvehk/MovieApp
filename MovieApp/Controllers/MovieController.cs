@@ -11,6 +11,7 @@ using Serilog;
 using Microsoft.Extensions.Configuration;
 using System.Net;
 using MovieApp.Model;
+using MovieApp.Interface;
 
 namespace MovieApp.Controllers
 
@@ -24,12 +25,12 @@ namespace MovieApp.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly ILogger<MovieController> _logger;
-
-        public MovieController(ILogger<MovieController> logger, IConfiguration configuration)
+        private readonly IMovieService _service;
+        public MovieController(ILogger<MovieController> logger, IConfiguration configuration,IMovieService service)
         {
             _logger = logger;
-
             _configuration = configuration;
+            _service = service;
 
         }
 
@@ -40,27 +41,8 @@ namespace MovieApp.Controllers
         [HttpGet]
         public IEnumerable<Movie> GetMovies()
         {
-            var client = new RestClient(_configuration.GetSection("APISettings").GetSection("APIURL").Value );
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("X-Access-token", _configuration.GetSection("APISettings").GetSection("X-Access-Token").Value);
-            request.AddHeader("Content-Type", "application/json");
-            IEnumerable<Movie> _movies = null;
-            try
-            {
-                RestSharp.IRestResponse response = client.Execute(request);
-
-                dynamic jsonResponse = JsonConvert.DeserializeObject<MovieList>(response.Content);
-
-
-                _movies = jsonResponse.Movies;
-               
-
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex, "Error happend trying to get response from API");
-            }
-            return _movies ;
+            var items = _service.GetAllMovies ();
+            return items;
 
         }
         /// <summary>
@@ -69,18 +51,14 @@ namespace MovieApp.Controllers
         /// <param name="Id"></param> id of movie
         /// <returns>movie</returns>
         [HttpGet("/movie/{id}")]
-        public Movie GetMovieById(string Id)
+        public Movie GetMovieById(string id)
         {
-            var client = new RestClient(_configuration.GetSection("APISettings").GetSection("APIURL").Value + Id);
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("X-Access-token", _configuration.GetSection("APISettings").GetSection("X-Access-Token").Value);
-            request.AddHeader("Content-Type", "application/json");
-            Movie _movie = new Movie();
-            RestSharp.IRestResponse response = client.Execute(request);
-            dynamic jsonResponse = JsonConvert.DeserializeObject<Movie>(response.Content);
-            if (jsonResponse == null) return _movie;
-
-            return jsonResponse;
+            var item = _service.GetMovieById(id);
+            if (item == null)
+            {
+                return null;
+            }
+            return item;
 
         }
     }

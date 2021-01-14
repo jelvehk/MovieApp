@@ -3,7 +3,8 @@ Movie App:
 # Technologies
  - ASP.NET Core 3.1
  - React
- - UnitTest.net Framework
+ - UnitTest.net Framework using Mock
+
 # Description
 -I have developed movie app using .Net Core 3.1 and react. 
 -Add the x-access-token to appsettings file
